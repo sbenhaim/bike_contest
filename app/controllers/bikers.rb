@@ -1,6 +1,10 @@
 class Bikers < Application
   # provides :xml, :yaml, :js
 
+  =begin
+    TODO SB: Resful routing
+  =end
+  
   def index
     @bikers = Biker.all
     display @bikers
