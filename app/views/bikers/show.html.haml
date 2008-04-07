@@ -1,0 +1,10 @@
+%h1= @biker.first_name + " " + @biker.last_name
+
+%ul
+  - for ride in @biker.rides
+  %li= ride.date.to_s + " - " + ride.distance.to_s + " miles " + " | " + ride.type
+  - end
+
+%a{:href => url(:controller => :rides, :action => :new, :biker_id => @biker.id)} add ride
+\|
+%a{:href => url(:action => :index)} all bikers

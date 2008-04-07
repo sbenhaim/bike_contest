@@ -1,0 +1,11 @@
+%h1 Bikers
+%ul
+  - for biker in @bikers
+  %li
+    %a{:href => url(:action => :show, :id => biker.id)}=biker.first_name + " " + biker.last_name
+    \-
+    = biker.rides.map { |r| r.distance }.inject { |sum, x| sum + x }.to_s.ljust(1, "0") + " miles logged"
+  - end
+  
+%p
+  %a{:href => url(:action => :new )}New

@@ -1,0 +1,138 @@
+Sun, 06 Apr 2008 20:56:08 GMT  ~  info  ~  Logfile created
+ ~ Loaded DEVELOPMENT Environment...
+ ~ loading gem 'merb_datamapper' from  ...
+ ~ loading gem 'merb_helpers' from  ...
+ ~ Connecting to database...
+ ~ Compiling routes...
+ ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+ ~ Using Mongrel adapter
+ ~ Request: 
+ ~ No routes match the request, / - (Merb::ControllerExceptions::NotFound)
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:34:in `handle'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb:37:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb:72:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb:21:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:116:in `daemonize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:97:in `fork'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:97:in `daemonize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:36:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb:29:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/bin/merb:8
+/opt/local/bin/merb:19:in `load'
+/opt/local/bin/merb:19
+ ~ 
+
+ ~ Request: /images/merb.jpg
+ ~ Request: /favicon.ico
+ ~ Request: /stylesheets/master.css
+ ~ Request: /bikers
+ ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"bikers"}
+ ~ Routed to: {:format=>nil, :action=>"index", :controller=>"bikers", :id=>nil}
+ ~ {:before_filters_time=>9.0e-06, :action_time=>0.003168, :after_filters_time=>7.0e-06, :dispatch_time=>0.003442}
+ ~ 
+
+ ~ Request: /bikers
+ ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"bikers"}
+ ~ Routed to: {:format=>nil, :action=>"index", :controller=>"bikers", :id=>nil}
+ ~ {:before_filters_time=>9.0e-06, :action_time=>0.00181, :after_filters_time=>8.0e-06, :dispatch_time=>0.002097}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /favicon.ico
+ ~ Loaded DEVELOPMENT Environment...
+ ~ loading gem 'merb_datamapper' from  ...
+ ~ loading gem 'merb_helpers' from  ...
+ ~ Connecting to database...
+ ~ Compiling routes...
+ ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+ ~ Using Mongrel adapter
+ ~ Request: /bikers
+ ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"bikers"}
+ ~ Routed to: {:format=>nil, :action=>"index", :controller=>"bikers", :id=>nil}
+ ~ Merb::ControllerExceptions::NotAcceptable - (Merb::ControllerExceptions::NotAcceptable)
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:173:in `display'
+/Users/selah/merb/bike_contest/app/controllers/bikers.rb:6:in `index'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:220:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:220:in `_call_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:200:in `_dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/merb_controller.rb:175:in `_dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `dispatch_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `dispatch_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:66:in `handle'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb:37:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb:72:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb:21:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:116:in `daemonize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:97:in `fork'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:97:in `daemonize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:36:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb:29:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/bin/merb:8
+/opt/local/bin/merb:19:in `load'
+/opt/local/bin/merb:19
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /images/merb.jpg
+ ~ Request: /favicon.ico
+ ~ Request: /favicon.ico
+ ~ Request: /bikers
+ ~ Params: {"format"=>nil, "action"=>"index", "id"=>nil, "controller"=>"bikers"}
+ ~ Routed to: {:format=>nil, :action=>"index", :controller=>"bikers", :id=>nil}
+ ~ Merb::ControllerExceptions::NotAcceptable - (Merb::ControllerExceptions::NotAcceptable)
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:173:in `display'
+/Users/selah/merb/bike_contest/app/controllers/bikers.rb:6:in `index'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:220:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:220:in `_call_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:200:in `_dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/merb_controller.rb:175:in `_dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `dispatch_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `dispatch_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:66:in `handle'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb:37:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb:72:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb:21:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:116:in `daemonize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:97:in `fork'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:97:in `daemonize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:36:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb:29:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/bin/merb:8
+/opt/local/bin/merb:19:in `load'
+/opt/local/bin/merb:19
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /images/merb.jpg

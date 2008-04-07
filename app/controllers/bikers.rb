@@ -1,0 +1,57 @@
+class Bikers < Application
+  # provides :xml, :yaml, :js
+
+  def index
+    @bikers = Biker.all
+    display @bikers
+  end
+
+  def show
+    @biker = Biker.first(params[:id])
+    raise NotFound unless @biker
+    display @biker
+  end
+
+  def new
+    only_provides :html
+    @biker = Biker.new
+    render
+  end
+
+  def edit
+    only_provides :html
+    @biker = Biker.first(params[:id])
+    raise NotFound unless @biker
+    render
+  end
+
+  def create
+    @biker = Biker.new(params[:biker])
+    if @biker.save
+      redirect url({:action => :index})
+    else
+      render :new
+    end
+  end
+
+  def update
+    @biker = Biker.first(params[:id])
+    raise NotFound unless @biker
+    if @biker.update_attributes(params[:biker])
+      redirect url(:biker, @biker)
+    else
+      raise BadRequest
+    end
+  end
+
+  def destroy
+    @biker = Biker.first(params[:id])
+    raise NotFound unless @biker
+    if @biker.destroy!
+      redirect url(:biker)
+    else
+      raise BadRequest
+    end
+  end
+
+end
