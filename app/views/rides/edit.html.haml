@@ -1,3 +1,17 @@
-<h1>Rides controller, edit action</h1>
+%h1== edit ride
 
-<p>Edit this file in <tt>app/views/rides/edit.html.erb</tt></p>
+- form_for :ride, :action => url(:biker_ride, @ride) do
+%p#date_field
+  = text_control :date, :label => 'date', :class => :watched, :target => "#guess"
+  %span#guess
+%p
+  = text_control :distance,  :label => 'distance'
+%p
+  = text_area_control :notes,  :label => 'notes'
+%p
+  = submit_button 'update'
+- end
+
+%script
+  ==$("#ride_date").change(function( e ) { $("#guess").load("#{url(:action => :show_date_guess)}", {date: e.target.value}); });
+  $("#ride_date").change();

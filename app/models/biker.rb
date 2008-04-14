@@ -6,4 +6,9 @@ class Biker < DataMapper::Base
   property :username, :string
   property :password, :string
   property :miles_public, :boolean
+  
+  def total_miles
+    self.rides.map {|r| r.distance }.inject { |sum, dist| sum + dist } || 0.0
+  end
+
 end

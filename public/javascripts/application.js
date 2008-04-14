@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	$("a.remote").click(function() {
 		$(this.rel).load($(this).attr('part'));
+		$(this.rel).show();
 	});	
 });
 

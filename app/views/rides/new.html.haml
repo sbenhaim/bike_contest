@@ -1,12 +1,19 @@
-%h1== Add ride
+%h1== add ride
 
-- form_for :ride, :action => url(:biker_ride, :biker_id => @biker) do
+- form_for :ride, :action => url(:biker_ride, @ride) do
 %p
-  = text_control :date, :label => 'date'
+  = text_control :date, :label => 'date', :value => 'today'
+  %span#guess
 %p
   = text_control :distance,  :label => 'distance'
 %p
   = text_area_control :notes,  :label => 'notes'
 %p
   = submit_button 'add'
+  %a{:onclick => '$("#ride").slideToggle();', :href => "javascript:;"}cancel
 - end
+
+%script
+  ==$("#ride_date").change(function( e ) { $("#guess").load("#{url(:action => :show_date_guess)}", {date: e.target.value}); });
+  $("#ride_date").select();
+  $("#ride_date").change();

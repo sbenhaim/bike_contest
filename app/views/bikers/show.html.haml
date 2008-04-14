@@ -1,14 +1,49 @@
 %h1= @biker.first_name + " " + @biker.last_name
 
 #logged{:style => "text-align: center"}
-  #miles= total_miles @biker
-  .text miles logged
-  
-  
-#controlls.clear
-  = link_to "edit", url(:edit_biker, @biker)
-  \|
-  = remote_link "add ride", url(:new_biker_ride, :biker_id => @biker), "#add_ride"
-  -#%p= link_to "all riders", url :bikers
+  #miles= @biker.total_miles
+  #miles_logged miles logged
 
-#add_ride
+#chart
+  %h1 chart goes here
+  
+#log
+  %h2 log
+  
+  %table
+    %tr
+      %th date
+      %th miles
+      
+    - sort_date(@biker.rides).each do |ride|
+    %tr
+      %td= pretty_date ride.date
+      %td= ride.distance
+      %td= remote_link "edit", url(:edit_biker_ride, ride), "#ride"
+      %td= link_to "x", url(:delete_biker_ride, ride)
+    - end
+      
+  #add_ride=remote_link "add ride", url(:new_biker_ride, :biker_id => @biker.id), "#ride"
+  
+#overview
+  %h2 overview
+  %table
+    %tr
+      %th place
+      %th biker
+      %th miles
+    
+    - sort_miles(@bikers).each_with_index do |biker, i|
+    %tr
+      %td= i + 1
+      %td= biker.first_name + " " + biker.last_name
+      %td= biker.total_miles
+    - end
+
+#ride
+
+%script
+  var height = $("#log").height() > $("#overview").height() ? $("#log").height() : $("#overview").height();
+  $("#log").height(height); $("#overview").height(height);
+  var height = $("#logged").height() > $("#chart").height() ? $("#logged").height() : $("#chart").height();
+  $("#logged").height(height); $("#chart").height(height);

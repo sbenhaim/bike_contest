@@ -8,8 +8,9 @@ class Bikers < Application
 
   def show
     @biker = Biker.first(params[:id])
+    @bikers = Biker.all
     raise NotFound unless @biker
-    display @biker
+    render
   end
 
   def new

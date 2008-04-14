@@ -1,7 +1,7 @@
 module Merb
     module BikersHelper
-      def total_miles(biker)
-        @biker.rides.map {|r| r.distance }.inject { |sum, dist| sum + dist } || 0.0
+      def sort_miles(bikers)
+        bikers.sort {|a, b| b.total_miles <=> a.total_miles}
       end
     end
 end

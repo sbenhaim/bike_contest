@@ -21,6 +21,7 @@
 
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do |r|
+  
   # RESTful routes
   r.resources :bikers do |biker|
     biker.resources :rides

@@ -5,7 +5,7 @@
 }
 
 a, a:visited {
-	color: #09006D;
+	color: #666;
 }
 
 .clear {
@@ -31,13 +31,12 @@ body {
 	margin-right: auto;
 }
 form {
-	margin: 15px;
 	padding: 10px;
-	border: 1px solid #CCC;
 }
 label {
 	display: block;
 	float: left;
+	clear: left;
 	width: 70px;
 }
 
@@ -47,12 +46,12 @@ h1, p {
 }
 
 #miles {
-	font-size: 10em;
+	font-size: 7em;
 	color: black;
 	font-family: "Courier";
 }
 
-.text {
+#miles_logged {
 	font-size: 2em;
 	font-family: "Courier";
 	color: black;
@@ -60,9 +59,76 @@ h1, p {
 
 #logged {
 	text-align: center;
-	width: auto;
-	background-color: #FCFFBB;
+	width: 358px;
+	background-color: #FFF8D2;
 	padding: 10px;
 	margin: 10px;
 	border: 1px solid black;
+	float: left;
+}
+
+#chart {
+	text-align: center;
+	width: 358px;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid black;
+	float: left;
+}
+
+#log {
+	float: left;
+	border: 1px solid black;
+	padding: 10px;
+	width: 358px;
+	margin: 10px;
+}
+
+#overview {
+	float: left;
+	border: 1px solid black;
+	padding: 10px;
+	margin: 10px;
+	width: 358px;
+}
+
+ul {
+	margin: 10px;
+}
+
+li {
+	list-style-type: none;
+	margin: 5px;
+	margin-left: 10px;
+}
+
+#ride_show_date {
+	float: left;
+	margin-right: 10px;
+	padding-right: 5px;
+	border-right: 1px solid #ccc;
+}
+
+#ride {
+	clear: left;
+	display: none;
+	margin: 10px;
+	border: 1px solid black;
+	padding: 10px;
+	width: 358px;
+}
+
+table {
+	width: 300px;
+	margin: 10px;
+}
+
+th {
+	text-align: left;
+}
+
+td {
+	border: 1px solid #999;
+	background-color: #eee;
+	padding: 5px;
 }
