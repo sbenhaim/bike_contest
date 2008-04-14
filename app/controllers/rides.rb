@@ -16,7 +16,7 @@ class Rides < Application
     only_provides :html
     @biker = Biker[params[:biker_id]]
     @ride = Ride.new
-    render
+    render :layout => false
   end
 
   def edit
@@ -27,10 +27,11 @@ class Rides < Application
   end
 
   def create
-    params[:ride][:date] = `php -r 'echo date("Y-m-d", strtotime("#{params[:ride][:date]}"));'`.chomp
+    params[:ride][:date] = strtodate(params[:ride][:date])
+    params[:ride][:biker_id] = params[:biker_id]
     @ride = Ride.new(params[:ride])
     if @ride.save
-      redirect url(:controller => :bikers, :action => :show, :id => params[:ride][:biker_id])
+      redirect url(:biker, Biker[params[:biker_id]])
     else
       render :new
     end
@@ -54,6 +55,10 @@ class Rides < Application
     else
       raise BadRequest
     end
+  end
+  
+  def show_date_guess
+    display strtodate(params[:date])
   end
 
 end

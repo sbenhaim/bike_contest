@@ -1,14 +1,12 @@
-%h1== Add ride for #{@biker.first_name}
+%h1== Add ride
 
-- form_for :ride, :action => url(:action => :create) do
+- form_for :ride, :action => url(:biker_ride, :biker_id => @biker) do
 %p
-  = text_control :date, :label => 'Date'
+  = text_control :date, :label => 'date'
 %p
-  = text_control :distance,  :label => 'Distance'
+  = text_control :distance,  :label => 'distance'
 %p
-  = text_control :type,  :label => 'Type'
+  = text_area_control :notes,  :label => 'notes'
 %p
-  = hidden_control :biker_id, {:value => @biker.id}
-%p
-  = submit_button 'Create'
+  = submit_button 'add'
 - end

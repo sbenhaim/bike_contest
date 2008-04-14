@@ -2,13 +2,12 @@
 %ul
   - for biker in @bikers
   %li
-    %a{:href => url(:action => :show, :id => biker.id)}=biker.first_name + " " + biker.last_name
+    %a{:href => url(:biker, biker)}=biker.first_name + " " + biker.last_name
     \-
     = biker.rides.map { |r| r.distance }.inject { |sum, x| sum + x }.to_s.ljust(1, "0") + " miles logged"
+    \|
+    = link_to "delete", url(:delete_biker, biker)
   - end
   
 %p
-  %a{:href => url(:action => :new )}New
-  
--# Todo SB: Restful routing
--# Todo SB: Ajax and partials
+  = link_to "New", url(:new_biker)

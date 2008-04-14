@@ -1,10 +1,14 @@
 %h1= @biker.first_name + " " + @biker.last_name
 
-%ul
-  - for ride in @biker.rides
-  %li= ride.date.to_s + " - " + ride.distance.to_s + " miles " + " | " + ride.type
-  - end
+#logged{:style => "text-align: center"}
+  #miles= total_miles @biker
+  .text miles logged
+  
+  
+#controlls.clear
+  = link_to "edit", url(:edit_biker, @biker)
+  \|
+  = remote_link "add ride", url(:new_biker_ride, :biker_id => @biker), "#add_ride"
+  -#%p= link_to "all riders", url :bikers
 
-%a{:href => url(:controller => :rides, :action => :new, :biker_id => @biker.id)} add ride
-\|
-%a{:href => url(:action => :index)} all bikers
+#add_ride

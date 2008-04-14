@@ -22,12 +22,30 @@
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do |r|
   # RESTful routes
-  # r.resources :posts
-  =begin
-    TODO SB: Resful Routing
-  =end
-  r.match("/").
-    to(:controller => "bikers")
+  r.resources :bikers do |biker|
+    biker.resources :rides
+  end
+  
+  r.resources :rides
+  
+  # AVAILABLE ROUTES
+
+  #  :delete_ride
+  #  :biker_rides
+  #  :rides
+  #  :new_biker
+  #  :biker_ride
+  #  :bikers
+  #  :edit_biker
+  #  :new_biker_ride
+  #  :biker
+  #  :ride
+  #  :delete_biker
+  #  :edit_biker_ride
+  #  :new_ride
+  #  :delete_biker_ride
+  #  :edit_ride
+   
   # This is the default route for /:controller/:action/:id
   # This is fine for most cases.  If you're heavily using resource-based
   # routes, you may want to comment/remove this line to prevent
@@ -35,5 +53,5 @@ Merb::Router.prepare do |r|
   r.default_routes
   
   # Change this for your home page to be available at /
-  # r.match('/').to(:controller => 'whatever', :action =>'index')
+  r.match('/').to(:controller => 'login', :action =>'index')
 end

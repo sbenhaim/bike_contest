@@ -1,13 +1,9 @@
 class Bikers < Application
   # provides :xml, :yaml, :js
 
-  =begin
-    TODO SB: Resful routing
-  =end
-  
   def index
     @bikers = Biker.all
-    display @bikers
+    render
   end
 
   def show
@@ -32,14 +28,14 @@ class Bikers < Application
   def create
     @biker = Biker.new(params[:biker])
     if @biker.save
-      redirect url({:action => :index})
+      redirect url(:biker, @biker)
     else
       render :new
     end
   end
 
   def update
-    @biker = Biker.first(params[:id])
+    @biker = Biker.find(params[:id])
     raise NotFound unless @biker
     if @biker.update_attributes(params[:biker])
       redirect url(:biker, @biker)
@@ -48,7 +44,7 @@ class Bikers < Application
     end
   end
 
-  def destroy
+  def delete
     @biker = Biker.first(params[:id])
     raise NotFound unless @biker
     if @biker.destroy!
@@ -56,6 +52,10 @@ class Bikers < Application
     else
       raise BadRequest
     end
+  end
+  
+  def debug_params
+    display params
   end
 
 end

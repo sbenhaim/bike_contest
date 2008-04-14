@@ -43,7 +43,7 @@ use_test :rspec
 
 ### Add your other dependencies here
 
-dependencies "merb_helpers", "merb-haml"
+dependencies "merb_helpers", "merb-haml", "merb-assets"
 
 # These are some examples of how you might specify dependencies.
 # 
