@@ -34,7 +34,7 @@ class Bikers < Application
   def edit
     only_provides :html
     raise NotFound unless @biker
-    render
+    render :layout => false
   end
 
   def create

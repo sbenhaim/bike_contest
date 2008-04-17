@@ -1,0 +1,37 @@
+ ~ Loaded DEVELOPMENT Environment...
+ ~ loading gem 'merb_datamapper' from  ...
+ ~ loading gem 'merb_helpers' from  ...
+ ~ loading gem 'merb-haml' from  ...
+ ~ loading gem 'merb-assets' from  ...
+ ~ Connecting to database...
+ ~ Compiling routes...
+ ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+ ~ Using Mongrel adapter
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.014534, :before_filters_time=>0.009426, :after_filters_time=>9.0e-06, :action_time=>0.0143}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: 
+ ~ Params: {"action"=>"index", "controller"=>"login"}
+ ~ Routed to: {:controller=>"login", :action=>"index"}
+ ~ Redirecting to: /bikers/1
+ ~ {:dispatch_time=>0.001691, :before_filters_time=>1.6e-05, :after_filters_time=>9.0e-06, :action_time=>0.001371}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.014965, :before_filters_time=>0.001457, :after_filters_time=>1.0e-05, :action_time=>0.014611}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "period"=>"total", "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.013763, :before_filters_time=>0.000952, :after_filters_time=>1.3e-05, :action_time=>0.013438}
+ ~ 
+

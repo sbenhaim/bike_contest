@@ -1,74 +1,75 @@
-#switch
-  #edit.tab{}= link_to "edit account", url(:edit_biker, @biker)
-  - months.each_with_index do |month, i|
-  %div{:class => @period == month ? 'tab selected' : 'tab', :style => "margin-right: #{(i + 1) * 60 + 15}px;"}
-    = link_to month_name(month, 'short').upcase, "?period=#{month}"
-  - end
-  #total{:class => @period == 'total' ? 'tab selected' : 'tab' }
-    = link_to "TOTAL", "?period=total"
-.logged{:style => "text-align: center"}
-  .miles= @biker.miles(@period)
-  .miles_logged miles logged
-  -#.miles= @biker.place.to_s + "st"
-  -#.miles_logged place
-
-.logged
-  .miles= cardinal(@biker.place(@period))
-  .miles_logged place
-
-#log
-  %h2 log
-  #month_log{:class => @period == 'total' ? 'hidden' : ''}
-    %table
-      %tr
-        %th date
-        %th miles
-      - sort_date(@biker.rides).each do |ride|
-      - next unless month_of(ride) == @period
-      %tr
-        %td= pretty_date ride.date
-        %td{:style => "text-align: right;"}= ride.distance
-        - if @period == this_month
-        %td{:style => "background-color: #FFF8D2; text-align: center; font-weight: bold"}= remote_link( "edit", url(:edit_biker_ride, ride), "#ride" )
-        -end
-        - if @period == this_month
-        %td{:style => "background-color: #FFF8D2; text-align: center; font-weight: bold"}= link_to( "x", url(:delete_biker_ride, ride) )
-        - end
-        - end
-      
-  #total_log{:class => @period == 'total' ? '' : 'hidden'}
-    %table
-      %tr
-        %th month
-        %th miles
-        %th
-      - months.each do |month|
-      %tr
-        %td= month_name(month)
-        %td{:style => "text-align: right;"}= @biker.miles(month)
-        %td{:style => "background-color: #FFF8D2; text-align: center; font-weight: bold"}= link_to "view log", "?period=#{month}"
-      - end
-
-  #add_ride=remote_link "add ride", url(:new_biker_ride, :biker_id => @biker.id), "#ride" if @period == this_month
-
-#overview
-  %h2 overview
-  %table
-    %tr
-      %th place
-      %th biker
-      %th miles
-  
-    - sort_miles(@bikers, @period).each_with_index do |biker, i|
-    %tr
-      %td{:style => "background-color: #FFF8D2; text-align: center; font-weight: bold"}= i + 1
-      %td= biker.first_name + " " + biker.last_name
-      %td= biker.miles(@period)
+#wrapper
+  #switch
+    #edit.tab= remote_link "edit account", url(:edit_biker, @biker), "#ride"
+    - months.each_with_index do |month, i|
+    %div{:class => @period == month ? 'tab selected' : 'tab', :style => "margin-right: #{(i + 1) * 40 + 15}px; width: 20px;"}
+      = link_to month_name(month, 'short').downcase, "?period=#{month}"
     - end
-#ride
+    #total{:class => @period == 'total' ? 'tab selected' : 'tab' }
+      = link_to "total", "?period=total"
+  .logged{:style => "text-align: center"}
+    .miles= @biker.miles(@period)
+    .miles_logged miles logged
+    -#.miles= @biker.place.to_s + "st"
+    -#.miles_logged place
 
-%script
-  var height = $("#log").height() > $("#overview").height() ? $("#log").height() : $("#overview").height();
-  $("#log").height(height); $("#overview").height(height);
-  var height = $("#logged").height() > $("#chart").height() ? $("#logged").height() : $("#chart").height();
-  $("#logged").height(height); $("#chart").height(height);
+  .logged
+    .miles= cardinal(@biker.place(@period))
+    .miles_logged place
+
+  #log
+    %h2 log
+    #month_log{:class => @period == 'total' ? 'hidden' : ''}
+      %table
+        %tr
+          %th date
+          %th miles
+        - sort_date(@biker.rides).each do |ride|
+        - next unless month_of(ride) == @period
+        %tr
+          %td= pretty_date ride.date
+          %td{:style => "text-align: right;"}= ride.distance
+          - if @period == this_month
+          %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= remote_link( "edit", url(:edit_biker_ride, ride), "#ride" )
+          -end
+          - if @period == this_month
+          %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= link_to( "x", url(:delete_biker_ride, ride) )
+          - end
+          - end
+      
+    #total_log{:class => @period == 'total' ? '' : 'hidden'}
+      %table
+        %tr
+          %th month
+          %th miles
+          %th
+        - months.each do |month|
+        %tr
+          %td= month_name(month)
+          %td{:style => "text-align: right;"}= @biker.miles(month)
+          %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= link_to "view log", "?period=#{month}"
+        - end
+
+    #add_ride=remote_link "add ride", url(:new_biker_ride, :biker_id => @biker.id), "#ride" if @period == this_month
+
+  #overview
+    %h2 overview
+    %table
+      %tr
+        %th place
+        %th biker
+        %th miles
+  
+      - sort_miles(@bikers, @period).each_with_index do |biker, i|
+      %tr
+        %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= i + 1
+        %td= biker.first_name + " " + biker.last_name
+        %td= biker.miles(@period)
+      - end
+  #ride
+
+  %script
+    var height = $("#log").height() > $("#overview").height() ? $("#log").height() : $("#overview").height();
+    $("#log").height(height); $("#overview").height(height);
+    var height = $("#logged").height() > $("#chart").height() ? $("#logged").height() : $("#chart").height();
+    $("#logged").height(height); $("#chart").height(height);

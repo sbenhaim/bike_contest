@@ -7,6 +7,8 @@ class Login < Application
     else
       render
     end
+  rescue Exception => e
+    render
   end
   
   def authenticate

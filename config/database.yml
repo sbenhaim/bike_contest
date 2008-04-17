@@ -1,8 +1,10 @@
 ---
 # This is a sample database file for the DataMapper ORM
 :development: &defaults
-  :adapter: sqlite3
-  :database: db/bike_contest.db
+  :adapter: mysql
+  :database: bike_contest
+  :username: merb
+  :password: merb_bc
 
 :test:
   <<: *defaults

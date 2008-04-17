@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$("a.remote").click(function() {
 		$(this.rel).load($(this).attr('part'));
-		$(this.rel).show();
+		$(this.rel).show("slow");
 	});	
 });
 
@@ -12,4 +12,9 @@ function submitRemoteForm(form, action) {
 		data[input.name] = input.value;
 	});
 	$.post(action, data, null, "json");
+}
+
+Array.prototype.remove = function(el) {
+	this.splice(this.indexOf(el), 1);
+	return this;
 }

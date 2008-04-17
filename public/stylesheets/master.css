@@ -20,8 +20,7 @@ html {
   margin-bottom: 1px;
 }
 body {
-	background-color: #eee;
-	padding: 20px;
+	background-color: #3A478A;
 	font-family: "Helvetica", sans-serif;
 	font-size: 12px;
 	color: #666;
@@ -35,6 +34,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 form {
 	padding: 10px;
 }
@@ -65,7 +65,7 @@ h1, p {
 .logged {
 	text-align: center;
 	width: 358px;
-	background-color: #FFF8D2;
+	background-color: #DCDFFF;
 	padding: 10px;
 	margin: 10px;
 	border: 1px solid black;
@@ -170,17 +170,21 @@ td {
 .tab {
 	margin-left: 5px;
 	margin-right: 5px;
-	margin-top: -44px;
+	margin-top: -30px;
 	float: right;
 	padding: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 	border: 1px solid black;
-	background-color: white;
-	font-weight: bold;
+	background-color: #ddd;
+	font-size: 12px;
+/*	font-weight: bold;*/
 	top: 17px;
 }
 
 .tab.selected {
 	border-bottom: 1px solid white;
+	background-color: white;
 }
 
 #month {
@@ -192,4 +196,5 @@ td {
 
 #edit {
 	float: left;
+	background-color: #DCDFFF;
 }

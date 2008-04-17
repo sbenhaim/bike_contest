@@ -1,17 +1,6 @@
 class Rides < Application
   # provides :xml, :yaml, :js
 
-  def index
-    @rides = Ride.all
-    display @rides
-  end
-
-  def show
-    @ride = Ride.first(params[:id])
-    raise NotFound unless @ride
-    display @ride
-  end
-
   def new
     only_provides :html
     @ride = Ride.new :biker_id => params[:biker_id]

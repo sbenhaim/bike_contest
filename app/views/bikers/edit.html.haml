@@ -1,15 +1,18 @@
 %h1 Edit
-- form_for :biker, :action => url(:biker, @biker) do
+- form_for :biker, :id => 'edit_biker', :action => url(:biker, @biker) do
 
 %p
-  = text_control :first_name, :label => "First Name"
+  = text_control :first_name, :label => "First Name", :class => 'required'
 %p
-  = text_control :last_name, :label => "Last Name"
+  = text_control :last_name, :label => "Last Name", :class => 'required'
 %p
-  = text_control :username, :label => "username"
+  = text_control :username, :label => "username", :class => 'required'
 %p
-  = password_control :password, :label => "password"
+  = password_control :password, :label => "password", :class => 'required'
 %p  
-  = submit_button "Update"
+  = submit_button "update"
+  %a{:onclick => '$("#ride").slideToggle();', :href => "javascript:;"}cancel
 
 - end
+
+%script Validator.init($("#edit_biker"));

@@ -1,10 +1,10 @@
 class Biker < DataMapper::Base
   has_many :rides
   
-  property :first_name, :string
-  property :last_name, :string
-  property :username, :string
-  property :password, :string
+  property :first_name, :string, :nullable => false
+  property :last_name, :string, :nullable => false
+  property :username, :string, :nullable => false
+  property :password, :string, :nullable => false
   property :miles_public, :boolean
   
   def miles( period )

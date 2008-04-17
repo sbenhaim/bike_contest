@@ -1,0 +1,750 @@
+ ~ Loaded DEVELOPMENT Environment...
+ ~ loading gem 'merb_datamapper' from  ...
+ ~ loading gem 'merb_helpers' from  ...
+ ~ loading gem 'merb-haml' from  ...
+ ~ loading gem 'merb-assets' from  ...
+ ~ Connecting to database...
+ ~ Compiling routes...
+ ~ Using 'share-nothing' cookie sessions (4kb limit per client)
+ ~ Using Mongrel adapter
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ undefined method `link_to_remote' for #<Bikers:0x17bc194> - (NoMethodError)
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:528:in `method_missing'
+/Users/selah/merb/bike_contest/app/views/bikers/show.html.haml:3:in `__Users__selah__merb__bike__contest__app__views__bikers__show_html_haml'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:109:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:109:in `render'
+/Users/selah/merb/bike_contest/app/controllers/bikers.rb:25:in `show'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:221:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:221:in `_call_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:201:in `_dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/merb_controller.rb:176:in `_dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `dispatch_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `dispatch_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:66:in `handle'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb:37:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb:72:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb:21:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:43:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb:29:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/bin/merb:8
+/opt/local/bin/merb:19:in `load'
+/opt/local/bin/merb:19
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.023855, :before_filters_time=>0.001457, :after_filters_time=>1.0e-05, :action_time=>0.023621}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.003723, :before_filters_time=>0.000772, :after_filters_time=>1.0e-05, :action_time=>0.003501}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.015207, :before_filters_time=>0.000872, :after_filters_time=>1.1e-05, :action_time=>0.014943}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.003872, :before_filters_time=>0.000892, :after_filters_time=>1.1e-05, :action_time=>0.003654}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"update", "_method"=>"put", "id"=>"1", "controller"=>"bikers", "biker"=>{"username"=>"sbenhaim", "first_name"=>"Selah", "password"=>"de1monte", "last_name"=>"Ben-Haim"}}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"update"}
+ ~ Redirecting to: /bikers/1
+ ~ {:dispatch_time=>0.005055, :before_filters_time=>2.3e-05, :after_filters_time=>1.0e-05, :action_time=>0.004554}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.014164, :before_filters_time=>0.001041, :after_filters_time=>1.0e-05, :action_time=>0.013942}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/rides/new
+ ~ Params: {"action"=>"new", "controller"=>"rides", "biker_id"=>"1"}
+ ~ Routed to: {:controller=>"rides", :biker_id=>"1", :action=>"new"}
+ ~ {:dispatch_time=>0.003491, :before_filters_time=>1.1e-05, :after_filters_time=>9.0e-06, :action_time=>0.003252}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.070882, :before_filters_time=>1.3e-05, :after_filters_time=>8.0e-06, :action_time=>0.070536}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.097341, :before_filters_time=>1.3e-05, :after_filters_time=>7.0e-06, :action_time=>0.096743}
+ ~ 
+
+ ~ Request: /bikers/1/rides/new
+ ~ Params: {"action"=>"new", "controller"=>"rides", "biker_id"=>"1"}
+ ~ Routed to: {:controller=>"rides", :biker_id=>"1", :action=>"new"}
+ ~ {:dispatch_time=>0.004593, :before_filters_time=>1.3e-05, :after_filters_time=>1.0e-05, :action_time=>0.004126}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.055617, :before_filters_time=>1.3e-05, :after_filters_time=>7.0e-06, :action_time=>0.055175}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.09662, :before_filters_time=>1.3e-05, :after_filters_time=>7.0e-06, :action_time=>0.09605}
+ ~ 
+
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.004805, :before_filters_time=>0.000917, :after_filters_time=>9.0e-06, :action_time=>0.004317}
+ ~ 
+
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.003971, :before_filters_time=>0.000856, :after_filters_time=>9.0e-06, :action_time=>0.003739}
+ ~ 
+
+ ~ Request: /bikers/1/rides/new
+ ~ Params: {"action"=>"new", "controller"=>"rides", "biker_id"=>"1"}
+ ~ Routed to: {:controller=>"rides", :biker_id=>"1", :action=>"new"}
+ ~ {:dispatch_time=>0.003624, :before_filters_time=>1.3e-05, :after_filters_time=>1.0e-05, :action_time=>0.003371}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.105068, :before_filters_time=>1.2e-05, :after_filters_time=>8.0e-06, :action_time=>0.104634}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.096926, :before_filters_time=>1.4e-05, :after_filters_time=>6.0e-06, :action_time=>0.095257}
+ ~ 
+
+ ~ Request: /bikers/1/rides/new
+ ~ Params: {"action"=>"new", "controller"=>"rides", "biker_id"=>"1"}
+ ~ Routed to: {:controller=>"rides", :biker_id=>"1", :action=>"new"}
+ ~ {:dispatch_time=>0.004128, :before_filters_time=>1.3e-05, :after_filters_time=>1.0e-05, :action_time=>0.003667}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.100509, :before_filters_time=>1.3e-05, :after_filters_time=>8.0e-06, :action_time=>0.100103}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.097753, :before_filters_time=>1.3e-05, :after_filters_time=>9.0e-06, :action_time=>0.097137}
+ ~ 
+
+ ~ Request: /bikers/1/rides
+ ~ Params: {"format"=>nil, "action"=>"create", "controller"=>"rides", "ride"=>{"date"=>"today", "notes"=>"", "distance"=>"12"}, "biker_id"=>"1"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :biker_id=>"1", :action=>"create"}
+ ~ Redirecting to: /bikers/1
+ ~ {:dispatch_time=>0.115924, :before_filters_time=>1.3e-05, :after_filters_time=>1.2e-05, :action_time=>0.115236}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.018857, :before_filters_time=>0.000977, :after_filters_time=>1.0e-05, :action_time=>0.018211}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.091551, :before_filters_time=>0.001058, :after_filters_time=>1.0e-05, :action_time=>0.091233}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/rides/new
+ ~ Params: {"action"=>"new", "controller"=>"rides", "biker_id"=>"1"}
+ ~ Routed to: {:controller=>"rides", :biker_id=>"1", :action=>"new"}
+ ~ {:dispatch_time=>0.0032, :before_filters_time=>1.3e-05, :after_filters_time=>9.0e-06, :action_time=>0.002957}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.04763, :before_filters_time=>1.3e-05, :after_filters_time=>8.0e-06, :action_time=>0.047258}
+ ~ 
+
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.005995, :before_filters_time=>0.001077, :after_filters_time=>1.0e-05, :action_time=>0.005579}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.01938, :before_filters_time=>0.001042, :after_filters_time=>1.1e-05, :action_time=>0.019056}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ Illegal Nesting: Nesting within plain text is illegal. - (Haml::SyntaxError)
+/Users/selah/merb/bike_contest/app/views/bikers/edit.html.haml:21
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:296:in `push_plain'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:217:in `process_line'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:165:in `precompile'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/template.rb:201:in `each_with_index'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:125:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:125:in `each_with_index'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:125:in `precompile'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/engine.rb:75:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-haml-0.9.2/lib/merb-haml/template.rb:18:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/merb-haml-0.9.2/lib/merb-haml/template.rb:18:in `compile_template'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/template.rb:78:in `inline_template'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/template.rb:48:in `template_for'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:325:in `_template_for'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:323:in `reverse_each'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:323:in `_template_for'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:102:in `render'
+/Users/selah/merb/bike_contest/app/controllers/bikers.rb:37:in `edit'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:221:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:221:in `_call_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:201:in `_dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/merb_controller.rb:176:in `_dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `dispatch_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `dispatch_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:66:in `handle'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb:37:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb:72:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb:21:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:43:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb:29:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/bin/merb:8
+/opt/local/bin/merb:19:in `load'
+/opt/local/bin/merb:19
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.021894, :before_filters_time=>0.001315, :after_filters_time=>1.0e-05, :action_time=>0.021568}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ Illegal Nesting: Nesting within plain text is illegal. - (Haml::SyntaxError)
+/Users/selah/merb/bike_contest/app/views/bikers/edit.html.haml:21
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:296:in `push_plain'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:217:in `process_line'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:165:in `precompile'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/template.rb:201:in `each_with_index'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:125:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:125:in `each_with_index'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/precompiler.rb:125:in `precompile'
+/opt/local/lib/ruby/gems/1.8/gems/haml-1.8.2/lib/haml/engine.rb:75:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-haml-0.9.2/lib/merb-haml/template.rb:18:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/merb-haml-0.9.2/lib/merb-haml/template.rb:18:in `compile_template'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/template.rb:78:in `inline_template'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/template.rb:48:in `template_for'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:325:in `_template_for'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:323:in `reverse_each'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:323:in `_template_for'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/mixins/render.rb:102:in `render'
+/Users/selah/merb/bike_contest/app/controllers/bikers.rb:37:in `edit'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:221:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:221:in `_call_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/abstract_controller.rb:201:in `_dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/controller/merb_controller.rb:176:in `_dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `dispatch_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:120:in `dispatch_action'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb:66:in `handle'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb:37:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb:72:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb:21:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb:43:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb:29:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/merb-core-0.9.2/bin/merb:8
+/opt/local/bin/merb:19:in `load'
+/opt/local/bin/merb:19
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.034038, :before_filters_time=>0.004733, :after_filters_time=>6.9e-05, :action_time=>0.033706}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/rides/new
+ ~ Params: {"action"=>"new", "controller"=>"rides", "biker_id"=>"1"}
+ ~ Routed to: {:controller=>"rides", :biker_id=>"1", :action=>"new"}
+ ~ {:dispatch_time=>0.003298, :before_filters_time=>1.4e-05, :after_filters_time=>9.0e-06, :action_time=>0.00307}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.121189, :before_filters_time=>1.3e-05, :after_filters_time=>6.0e-06, :action_time=>0.12081}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.098235, :before_filters_time=>1.4e-05, :after_filters_time=>8.0e-06, :action_time=>0.097622}
+ ~ 
+
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.005318, :before_filters_time=>0.000963, :after_filters_time=>1.0e-05, :action_time=>0.004868}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.029365, :before_filters_time=>0.001896, :after_filters_time=>1.0e-05, :action_time=>0.02898}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.004091, :before_filters_time=>0.000775, :after_filters_time=>9.0e-06, :action_time=>0.00386}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.018871, :before_filters_time=>0.001023, :after_filters_time=>1.0e-05, :action_time=>0.018562}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.021509, :before_filters_time=>0.001068, :after_filters_time=>1.7e-05, :action_time=>0.021081}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.019805, :before_filters_time=>0.000952, :after_filters_time=>1.2e-05, :action_time=>0.019523}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.020029, :before_filters_time=>0.001362, :after_filters_time=>1.2e-05, :action_time=>0.019038}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.026855, :before_filters_time=>0.006128, :after_filters_time=>1.0e-05, :action_time=>0.026485}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.020649, :before_filters_time=>0.002254, :after_filters_time=>1.0e-05, :action_time=>0.020372}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.020791, :before_filters_time=>0.000974, :after_filters_time=>9.0e-06, :action_time=>0.020507}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.017227, :before_filters_time=>0.001116, :after_filters_time=>1.0e-05, :action_time=>0.016891}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.017963, :before_filters_time=>0.000935, :after_filters_time=>1.1e-05, :action_time=>0.017684}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.019409, :before_filters_time=>0.001087, :after_filters_time=>1.0e-05, :action_time=>0.019034}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.003695, :before_filters_time=>0.000766, :after_filters_time=>1.0e-05, :action_time=>0.003481}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.018784, :before_filters_time=>0.000973, :after_filters_time=>9.0e-06, :action_time=>0.018475}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.017248, :before_filters_time=>0.000992, :after_filters_time=>1.1e-05, :action_time=>0.016893}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.027069, :before_filters_time=>0.001124, :after_filters_time=>9.0e-06, :action_time=>0.02675}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.021291, :before_filters_time=>0.001798, :after_filters_time=>1.0e-05, :action_time=>0.02098}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.003969, :before_filters_time=>0.000743, :after_filters_time=>9.0e-06, :action_time=>0.003732}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.022712, :before_filters_time=>0.001097, :after_filters_time=>1.4e-05, :action_time=>0.022436}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.01179, :before_filters_time=>0.008307, :after_filters_time=>1.6e-05, :action_time=>0.011571}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.026858, :before_filters_time=>0.000907, :after_filters_time=>1.0e-05, :action_time=>0.026566}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.004059, :before_filters_time=>0.000786, :after_filters_time=>1.0e-05, :action_time=>0.003831}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.017216, :before_filters_time=>0.000858, :after_filters_time=>1.3e-05, :action_time=>0.016987}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.003997, :before_filters_time=>0.000903, :after_filters_time=>1.0e-05, :action_time=>0.003783}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.022402, :before_filters_time=>0.00092, :after_filters_time=>1.7e-05, :action_time=>0.022082}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.003907, :before_filters_time=>0.000852, :after_filters_time=>1.1e-05, :action_time=>0.003687}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.033824, :before_filters_time=>0.001009, :after_filters_time=>9.0e-06, :action_time=>0.033509}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.00388, :before_filters_time=>0.000756, :after_filters_time=>1.0e-05, :action_time=>0.00366}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.024332, :before_filters_time=>0.001151, :after_filters_time=>1.0e-05, :action_time=>0.023954}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.010374, :before_filters_time=>0.007175, :after_filters_time=>1.0e-05, :action_time=>0.010145}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.033425, :before_filters_time=>0.001818, :after_filters_time=>1.2e-05, :action_time=>0.033134}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/rides/new
+ ~ Params: {"action"=>"new", "controller"=>"rides", "biker_id"=>"1"}
+ ~ Routed to: {:controller=>"rides", :biker_id=>"1", :action=>"new"}
+ ~ {:dispatch_time=>0.003401, :before_filters_time=>1.3e-05, :after_filters_time=>9.0e-06, :action_time=>0.003167}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.104045, :before_filters_time=>1.3e-05, :after_filters_time=>8.0e-06, :action_time=>0.103653}
+ ~ 
+
+ ~ Request: /rides/show_date_guess
+ ~ Params: {"format"=>nil, "date"=>"today", "action"=>"show_date_guess", "id"=>nil, "controller"=>"rides"}
+ ~ Routed to: {:controller=>"rides", :format=>nil, :id=>nil, :action=>"show_date_guess"}
+ ~ {:dispatch_time=>0.098853, :before_filters_time=>1.4e-05, :after_filters_time=>9.0e-06, :action_time=>0.098297}
+ ~ 
+
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.0053, :before_filters_time=>0.000921, :after_filters_time=>1.0e-05, :action_time=>0.004764}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.020864, :before_filters_time=>0.001072, :after_filters_time=>1.1e-05, :action_time=>0.020495}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.004678, :before_filters_time=>0.001147, :after_filters_time=>1.2e-05, :action_time=>0.004367}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.020513, :before_filters_time=>0.001359, :after_filters_time=>1.1e-05, :action_time=>0.020232}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.004657, :before_filters_time=>0.000787, :after_filters_time=>1.0e-05, :action_time=>0.004424}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.019758, :before_filters_time=>0.001008, :after_filters_time=>1.3e-05, :action_time=>0.019385}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.005259, :before_filters_time=>0.001611, :after_filters_time=>1.6e-05, :action_time=>0.005011}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.023118, :before_filters_time=>0.001296, :after_filters_time=>1.0e-05, :action_time=>0.02278}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.004093, :before_filters_time=>0.000802, :after_filters_time=>1.0e-05, :action_time=>0.00387}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.018367, :before_filters_time=>0.001217, :after_filters_time=>1.1e-05, :action_time=>0.018072}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.003949, :before_filters_time=>0.000838, :after_filters_time=>1.1e-05, :action_time=>0.003725}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.020098, :before_filters_time=>0.000979, :after_filters_time=>1.0e-05, :action_time=>0.019854}
+ ~ 
+
+ ~ Request: /stylesheets/master.css
+ ~ Request: /javascripts/jquery.js
+ ~ Request: /javascripts/application.js
+ ~ Request: /javascripts/form.js
+ ~ Request: /bikers/1/edit
+ ~ Params: {"action"=>"edit", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :id=>"1", :action=>"edit"}
+ ~ {:dispatch_time=>0.007544, :before_filters_time=>0.000779, :after_filters_time=>1.0e-05, :action_time=>0.007144}
+ ~ 
+
+ ~ Request: /bikers/1
+ ~ Params: {"format"=>nil, "action"=>"show", "id"=>"1", "controller"=>"bikers"}
+ ~ Routed to: {:controller=>"bikers", :format=>nil, :id=>"1", :action=>"show"}
+ ~ {:dispatch_time=>0.044549, :before_filters_time=>0.024175, :after_filters_time=>1.0e-05, :acti
