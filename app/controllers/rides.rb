@@ -14,7 +14,6 @@ class Rides < Application
 
   def new
     only_provides :html
-    # @biker = Biker[params[:biker_id]]
     @ride = Ride.new :biker_id => params[:biker_id]
     render :layout => false
   end

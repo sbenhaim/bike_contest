@@ -1,5 +1,17 @@
 class Bikers < Application
   # provides :xml, :yaml, :js
+  before :authenticate, :only => [:show, :edit]
+  before :adminstrator, :only => [:index, :new, :debug]
+  
+  def authenticate
+    @biker = Biker.first(params[:id])
+    redirect "/" if @biker.id != session[:uid]      
+  end
+  
+  def adminstrator
+    @biker = Biker.first(session[:uid])
+    redirect "/" if @biker.username != 'sbenhaim'
+  end
 
   def index
     @bikers = Biker.all
@@ -7,8 +19,8 @@ class Bikers < Application
   end
 
   def show
-    @biker = Biker.first(params[:id])
     @bikers = Biker.all
+    @period = params[:period] || Date.today.strftime("%m")
     raise NotFound unless @biker
     render
   end
@@ -21,7 +33,6 @@ class Bikers < Application
 
   def edit
     only_provides :html
-    @biker = Biker.first(params[:id])
     raise NotFound unless @biker
     render
   end

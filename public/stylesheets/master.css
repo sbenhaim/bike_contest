@@ -8,6 +8,10 @@ a, a:visited {
 	color: #666;
 }
 
+.hidden {
+	display: none;
+}
+
 .clear {
 	clear: both;
 }
@@ -16,16 +20,17 @@ html {
   margin-bottom: 1px;
 }
 body {
-	background-color: #EEE;
+	background-color: #eee;
 	padding: 20px;
 	font-family: "Helvetica", sans-serif;
 	font-size: 12px;
 	color: #666;
 }
 #main {
-	background-color: #FFF;
-	border: 1px solid #CCC;
+	background-color: #fefefe;
+	border: 1px solid black;
 	padding: 10px;
+	margin-top: 30px;
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
@@ -45,19 +50,19 @@ h1, p {
 	margin-top: .5em;
 }
 
-#miles {
-	font-size: 7em;
+.miles {
+	font-size: 5em;
 	color: black;
 	font-family: "Courier";
 }
 
-#miles_logged {
+.miles_logged {
 	font-size: 2em;
 	font-family: "Courier";
 	color: black;
 }
 
-#logged {
+.logged {
 	text-align: center;
 	width: 358px;
 	background-color: #FFF8D2;
@@ -78,6 +83,7 @@ h1, p {
 
 #log {
 	float: left;
+	background-color: white;
 	border: 1px solid black;
 	padding: 10px;
 	width: 358px;
@@ -85,6 +91,7 @@ h1, p {
 }
 
 #overview {
+	background-color: white;
 	float: left;
 	border: 1px solid black;
 	padding: 10px;
@@ -106,7 +113,7 @@ li {
 	float: left;
 	margin-right: 10px;
 	padding-right: 5px;
-	border-right: 1px solid #ccc;
+	border-right: 1px solid #eee;
 }
 
 #ride {
@@ -131,4 +138,58 @@ td {
 	border: 1px solid #999;
 	background-color: #eee;
 	padding: 5px;
+}
+
+.line {
+	border-bottom: 1px solid black;
+}
+
+.header {
+	float: right;
+	padding: 10px;
+	font-size: 3em;
+	color: black;
+	border: 1px solid black;
+	border-bottom: 1px solid white;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: -1px;
+	text-align: right;
+	font-weight: bold;
+}
+
+#total_log {
+}
+
+#total_log .month {
+	font-weight: bold;
+	display: inline;
+	margin-right: 5px;
+}
+
+.tab {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: -44px;
+	float: right;
+	padding: 10px;
+	border: 1px solid black;
+	background-color: white;
+	font-weight: bold;
+	top: 17px;
+}
+
+.tab.selected {
+	border-bottom: 1px solid white;
+}
+
+#month {
+}
+
+#add_ride {
+	float: left;
+}
+
+#edit {
+	float: left;
 }

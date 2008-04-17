@@ -1,13 +1,19 @@
 class Login < Application
   
   def index
-    render
+    if session[:uid]
+      @biker = Biker[session[:uid]]
+      redirect url(:biker, @biker)
+    else
+      render
+    end
   end
   
   def authenticate
     username, password = params[:username], params[:password]
     @biker = Biker.first(:username => username, :password => password)
     if @biker
+      session[:uid] = @biker.id
       redirect url(:biker, @biker)
     else
       redirect url(:controller => :login)
