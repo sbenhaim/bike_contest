@@ -1,7 +1,7 @@
 class Ride < DataMapper::Base
   belongs_to :biker
   
-  property :date, :string
+  property :date, :string, :nullable => false
   property :notes, :string
   property :distance, :float
   
