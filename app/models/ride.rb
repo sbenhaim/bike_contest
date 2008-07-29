@@ -3,7 +3,7 @@ class Ride < DataMapper::Base
   
   property :date, :string, :nullable => false
   property :notes, :string
-  property :distance, :float
+  property :distance, :float, :nullable => false
   
   def month
     self.date.match(/^\d{4}-(\d{2})/)[1]

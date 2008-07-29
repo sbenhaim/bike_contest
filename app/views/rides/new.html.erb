@@ -1,0 +1,29 @@
+<h1>add ride</h1>
+
+<% form_for :ride, :id => 'add_ride', :action => url(:biker_ride, @ride) do %>
+	
+	<p>
+		<%= text_control :date, :label => 'date', :value => 'today' %> <span id="guess"></span>
+	</p>
+	
+	<p>
+		<%= text_control :distance, :label => 'distance', :class => 'required' %>
+	</p>
+	
+	<p>
+		<%= text_area_control :notes, :label => 'notes' %>
+	</p>
+	
+	<p>
+		<%= submit_button 'add' %>
+ 		<a href="javascript:" onclick="$('#ride').slideToggle();">cancel</a>
+	</p>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+	$("#ride_date").change(function( e ) { $("#guess").load("<%= url(:action => :show_date_guess) %>", {date: e.target.value}); });
+  $("#ride_date").select();
+  $("#ride_date").change();
+	Validator.init("form")
+</script>
+	
