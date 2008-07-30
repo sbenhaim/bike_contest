@@ -1,6 +1,3 @@
-var INVALID = "<span class='invalid'> x</span>";
-var VALID = "<span class='valid'> ok</span>";
-
 Val = {
 	form: null,
 	invalid: [],
@@ -76,7 +73,7 @@ Val = {
 		if ( ! Val.invalid.includes( el[0] ) ) {
 			el.addClass('invalid');
 			Val.invalid.push( el[0] );
-			if (message) el.siblings(".fail:first").html(message);
+			if (message && el.siblings(".fail:first")) el.siblings(".fail:first").html(message);
 			this.check_form();
 		}
 	}
