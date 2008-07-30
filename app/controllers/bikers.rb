@@ -1,16 +1,21 @@
 class Bikers < Application
-  # provides :xml, :yaml, :js
+  
+  before :get_biker
   before :authenticate, :only => [:show, :edit]
   before :adminstrator, :only => [:index, :new, :debug]
   
+  def get_biker
+    @biker = Biker.get(session[:uid])
+  end
+  
   def authenticate
-    @biker = Biker.first(params[:id])
-    redirect "/" if @biker.id != session[:uid]      
+    get_biker
+    redirect "/" if !@biker || @biker.id != session[:uid]  
   end
   
   def adminstrator
-    @biker = Biker.first(session[:uid])
-    redirect "/" if @biker.username != 'sbenhaim'
+    get_biker
+    redirect "/" if !@biker || @biker.username != 'sbenhaim'
   end
 
   def index
@@ -68,6 +73,13 @@ class Bikers < Application
   
   def debug_params
     display params
+  end
+  
+  def unique
+    provides :json
+    column, value = params[:column], params[:value]
+    return 'true' if column == 'username' && value == @biker.username
+    Biker.all(column.to_sym => value).length == 0 ? 'true' : 'false'
   end
 
 end

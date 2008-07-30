@@ -201,3 +201,18 @@ td {
 	float: left;
 	background-color: #DCDFFF;
 }
+
+.invalid {
+	color: red;
+}
+
+.valid {
+	color: green;
+}
+
+#biker_name {
+	position: absolute;
+	font-size: 1em;
+	left: 5;
+	top: 5;
+}

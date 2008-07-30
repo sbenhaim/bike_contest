@@ -1,13 +1,13 @@
 <h1>add ride</h1>
 
-<% form_for :ride, :id => 'add_ride', :action => url(:biker_ride, @ride) do %>
+<% form_for :ride, :id => 'add_ride_form', :action => url(:biker_ride, @ride) do %>
 	
 	<p>
 		<%= text_control :date, :label => 'date', :value => 'today' %> <span id="guess"></span>
 	</p>
 	
 	<p>
-		<%= text_control :distance, :label => 'distance', :class => 'required' %>
+		<%= text_control :distance, :label => 'distance', :class => 'positive_number' %>
 	</p>
 	
 	<p>
@@ -24,6 +24,6 @@
 	$("#ride_date").change(function( e ) { $("#guess").load("<%= url(:action => :show_date_guess) %>", {date: e.target.value}); });
   $("#ride_date").select();
   $("#ride_date").change();
-	Validator.init("form")
+	Val.init("add_ride_form");
 </script>
 	

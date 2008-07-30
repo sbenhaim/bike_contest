@@ -39,7 +39,7 @@ module Merb
     
     def months
       this_month = Date.today.strftime("%m")
-      ("01"..this_month).to_a.reverse
+      ("04"..this_month).to_a.reverse
     end
     
     def month_of(something)

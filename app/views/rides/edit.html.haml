@@ -1,11 +1,11 @@
 %h1== edit ride
 
-- form_for :ride, :action => url(:biker_ride, @ride) do
+- form_for :ride, :id => 'edit_ride_form', :action => url(:biker_ride, @ride) do
 %p#date_field
   = text_control :date, :label => 'date', :class => :watched, :target => "#guess"
   %span#guess
 %p
-  = text_control :distance,  :label => 'distance'
+  = text_control :distance,  :label => 'distance', :class => 'positive_number'
 %p
   = text_area_control :notes,  :label => 'notes'
 %p
@@ -15,3 +15,4 @@
 %script
   ==$("#ride_date").change(function( e ) { $("#guess").load("#{url(:action => :show_date_guess)}", {date: e.target.value}); });
   $("#ride_date").change();
+  Val.init('edit_ride_form');

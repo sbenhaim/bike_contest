@@ -8,6 +8,7 @@
     #total{:class => @period == 'total' ? 'tab selected' : 'tab' }
       = link_to "total", "?period=total"
   .logged{:style => "text-align: center"}
+    #biker_name= @biker.first_name
     .miles= @biker.miles(@period)
     .miles_logged miles logged
     -#.miles= @biker.place.to_s + "st"
@@ -62,7 +63,7 @@
   
       - sort_miles(@bikers, @period).each_with_index do |biker, i|
       %tr
-        %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= i + 1
+        %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= biker.place(@period)
         %td= biker.first_name + " " + biker.last_name
         %td= biker.miles(@period)
       - end

@@ -2,17 +2,20 @@
 - form_for :biker, :id => 'edit_biker', :action => url(:biker, @biker) do
 
 %p
-  = text_control :first_name, :label => "First Name", :class => 'required'
+  = text_control :first_name, :label => "First Name", :class => 'required', :disabled => true
 %p
-  = text_control :last_name, :label => "Last Name", :class => 'required'
+  = text_control :last_name, :label => "Last Name", :class => 'required', :disabled => true
 %p
-  = text_control :username, :label => "username", :class => 'required'
+  = text_control :username, :label => "username", :class => 'unique', :rel => 'bikers.username'
+  %span.taken.invalid
 %p
   = password_control :password, :label => "password", :class => 'required'
+%p
+  = password_control :password, :label => "confirm", :class => 'same_as', :rel => 'biker_password'
 %p  
   = submit_button "update"
   %a{:onclick => '$("#ride").slideToggle();', :href => "javascript:;"}cancel
 
 - end
 
-%script Validator.init($("#edit_biker"));
+%script Val.init("edit_biker");

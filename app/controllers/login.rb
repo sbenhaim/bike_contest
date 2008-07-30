@@ -16,10 +16,16 @@ class Login < Application
     @biker = Biker.first(:username => username, :password => password)
     if @biker
       session[:uid] = @biker.id
+      session[:user] = @biker.username
       redirect url(:biker, @biker)
     else
       redirect url(:controller => :login)
     end
+  end
+  
+  def logout
+    session[:uid] = session[:username] = nil
+    redirect '/'
   end
   
 end
