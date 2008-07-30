@@ -25,7 +25,7 @@ class Bikers < Application
 
   def show
     @bikers = Biker.all
-    @period = params[:period] || Date.today.strftime("%m")
+    @period = params[:period] || this_month
     raise NotFound unless @biker
     render
   end

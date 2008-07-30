@@ -1,9 +1,9 @@
-<h1>add ride</h1>
+<h1>edit ride</h1>
 
-<% form_for :ride, :id => 'add_ride_form', :action => url(:biker_ride, @ride) do %>
+<% form_for :ride, :id => 'edit_ride_form', :action => url(:biker_ride, @ride) do %>
 	
 	<p>
-		<%= text_control :date, :label => 'date', :value => pretty_date( strtodate( 'today' ) ), :class => 'required' %> <span class="fail invalid"></span>
+		<%= text_control :date, :label => 'date', :value => 'today', :class => 'required' %> <span class="fail invalid"></span>
 	</p>
 	
 	<p>
@@ -15,7 +15,7 @@
 	</p>
 	
 	<p>
-		<%= submit_button 'add' %>
+		<%= submit_button 'do it' %>
  		<a href="javascript:" onclick="$('#ride').slideToggle('slow');">cancel</a>
 	</p>
 <% end %>
@@ -24,7 +24,7 @@
 	$("#ride_date").blur(function( e ) { $.post("<%= url(:action => :show_date_guess) %>", {date: e.target.value}, change_date, 'json' ); });
   $("#ride_date").blur();
   $("#ride_distance").select();
-	Val.init("add_ride_form");
+	Val.init("edit_ride_form");
 	
 	function change_date( response ) {
     console.log( response );
@@ -37,4 +37,3 @@
     }
 	}
 </script>
-	

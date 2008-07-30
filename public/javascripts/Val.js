@@ -2,6 +2,8 @@ var INVALID = "<span class='invalid'> x</span>";
 var VALID = "<span class='valid'> ok</span>";
 
 Val = {
+	form: null,
+	invalid: [],
 	init: function( form ) {
 		Val.form = $("#" + form)[0];
 		Val.invalid = [];
@@ -29,15 +31,21 @@ Val = {
 	validate: function( e ) {
 		var el = $(e.target);
 
-		if (el.hasClass('required')) 	Validators.required( el[0] ) ? Val.pass( el ) : Val.fail( el );
-		if (el.hasClass('same_as')) 	Validators.same_as( el[0] )  ? Val.pass( el ) : Val.fail( el );
-		if (el.hasClass('email')) 		Validators.email( el[0] )    ? Val.pass( el ) : Val.fail( el );
-		if (el.hasClass('zip')) 		Validators.zip( el[0] )      ? Val.pass( el ) : Val.fail( el );
-		if (el.hasClass('positive_number')) 		Validators.positive_number( el[0] )   ? Val.pass( el ) : Val.fail( el ); 
+		if (el.hasClass('required')) 	Validators.required( el[0] ) ? Val.pass( el ) : Val.fail( el, '*' );
+		if (el.hasClass('same_as')) 	Validators.same_as( el[0] )  ? Val.pass( el ) : Val.fail( el, '*' );
+		if (el.hasClass('email')) 		Validators.email( el[0] )    ? Val.pass( el ) : Val.fail( el, '*' );
+		if (el.hasClass('zip')) 		Validators.zip( el[0] )      ? Val.pass( el ) : Val.fail( el, '*' );
+		if (el.hasClass('positive_number')) 		Validators.positive_number( el[0] )   ? Val.pass( el ) : Val.fail( el, '*' ); 
 		
 		if (el.hasClass('unique')) {
 			Val.greasy_wheel = el;
 			el = el[0];
+			
+			if ( !el.value ) {
+				Val.fail( $(el), '*' );
+				return;
+			}
+			
 			var controller = $(el).attr('rel').split('.')[0];
 			var data = {};
 			data.value = el.value;
@@ -49,11 +57,9 @@ Val = {
 	unique_hander: function( response ) {
 		if ( response ) {
 				Val.pass(Val.greasy_wheel)
-				Val.greasy_wheel.siblings("span.taken").html("");
 			}
 			else {
-				Val.fail(Val.greasy_wheel);
-				Val.greasy_wheel.siblings("span.taken").html("&nbsp;taken");
+				Val.fail(Val.greasy_wheel, 'Taken fail!');
 			}
 	},
 	
@@ -61,14 +67,16 @@ Val = {
 		if ( Val.invalid.includes( el[0] ) ) {
 			Val.invalid.remove( el[0] );
 			el.removeClass('invalid');
+			if (el.siblings(".fail:first")) el.siblings(".fail:first").html("");
 			this.check_form();
 		}
 	},
 	
-	fail: function( el ) {
+	fail: function( el, message ) {
 		if ( ! Val.invalid.includes( el[0] ) ) {
 			el.addClass('invalid');
 			Val.invalid.push( el[0] );
+			if (message) el.siblings(".fail:first").html(message);
 			this.check_form();
 		}
 	}
@@ -76,10 +84,6 @@ Val = {
 
 Array.prototype.includes = function( el ) {
 	return this.indexOf( el ) > -1;
-}
-
-Array.prototype.remove = function( el ) {
-	this.splice(this.indexOf(el), 1);
 }
 
 // Array.prototype.indexOf = function( el ) {

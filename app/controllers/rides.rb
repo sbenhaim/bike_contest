@@ -49,7 +49,9 @@ class Rides < Application
   end
   
   def show_date_guess
-    render pretty_date(strtodate(params[:date])), :layout => false
+    provides :json
+    date = strtodate(params[:date])
+    { :pretty => pretty_date( date ), :date => date }.to_json
   end
 
 end

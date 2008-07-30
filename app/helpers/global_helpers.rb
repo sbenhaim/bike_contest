@@ -10,6 +10,14 @@ module Merb
       form_for(resource, options, &block)
     end
     
+    def strtodate(date_string)
+      if date_string =~ /sun(day)?$|mon(day)?$|tue(sday)?$|wed(nesday)?$|thu(rsday)?$|fri(day)?$|sat(urday)?$/i
+        date_string = "last " + date_string unless date_string =~ /\blast\b/i
+      end
+      date = `php -r 'echo date("Y-m-d", strtotime("#{date_string}"));'`
+      date =~ /1969/ ? strtodate('today') : date
+    end
+    
     def pretty_date(date)
       date = Date.parse(date) if date.kind_of? String
       date.strftime("%a, %B %d")
