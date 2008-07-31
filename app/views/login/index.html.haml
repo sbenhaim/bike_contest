@@ -1,7 +1,8 @@
-%h1 Login
+.blue
+  %h1 Login
 
-- form_tag(:action => url(:action => :authenticate)) do
-%p= text_field :name => 'username', :label => 'username'
-%p= password_field :name => 'password', :label => 'password'
-%p= submit_button 'login'
-- end
+  - form_tag(:action => url(:action => :authenticate)) do
+  %p= text_field :name => 'username', :label => 'username'
+  %p= password_field :name => 'password', :label => 'password'
+  %p= submit_button 'login'
+  - end

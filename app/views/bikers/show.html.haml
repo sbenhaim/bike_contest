@@ -65,7 +65,7 @@
       %tr
         %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= biker.place(@period)
         %td= biker.first_name + " " + biker.last_name
-        %td= biker.miles(@period)
+        %td{:style => 'text-align: right'}= biker.miles(@period)
       - end
   #ride
 

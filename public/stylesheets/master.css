@@ -225,3 +225,9 @@ td {
 #ride {
 	background-color: white;
 }
+
+.blue {
+	border: 1px solid black;
+	padding: 5px;
+	background-color: #DCDFFF;
+}
