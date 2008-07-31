@@ -30,10 +30,10 @@
         %tr
           %td= pretty_date ride.date
           %td{:style => "text-align: right;"}= ride.distance
-          - if @period == this_month
+          - if true || @period == this_month
           %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= remote_link( "edit", url(:edit_biker_ride, ride), "#ride" )
           -end
-          - if @period == this_month
+          - if true || @period == this_month
           %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= link_to( "x", url(:delete_biker_ride, ride) )
           - end
           - end
