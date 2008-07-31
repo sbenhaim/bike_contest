@@ -24,7 +24,9 @@
 	$("#ride_date").blur(function( e ) { $.post("<%= url(:action => :show_date_guess) %>", {date: e.target.value}, change_date, 'json' ); });
   $("#ride_date").blur();
   $("#ride_distance").select();
+  
 	Val.init("edit_ride_form");
+
 	
 	function change_date( response ) {
     console.log( response );

@@ -22,6 +22,9 @@
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do |r|
   
+  r.match( %r{^/bikers/(\d+)/(apr|may|jun|jul|aug|sep|oct|total)$} ).
+    to( :controller => 'bikers', :action => 'show', :id => "[1]", :period => "[2]" )
+    
   # RESTful routes
   r.resources :bikers do |biker|
     biker.resources :rides

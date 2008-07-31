@@ -3,10 +3,10 @@
     #edit.tab= remote_link "edit account", url(:edit_biker, @biker), "#ride"
     - months.each_with_index do |month, i|
     %div{:class => @period == month ? 'tab selected' : 'tab', :style => "margin-right: #{(i + 1) * 40 + 15}px; width: 20px;"}
-      = link_to month_name(month, 'short').downcase, "?period=#{month}"
+      = link_to month_name(month, 'short').downcase, "/bikers/#{@biker.id}/#{month_name(month, 'short').downcase}"
     - end
     #total{:class => @period == 'total' ? 'tab selected' : 'tab' }
-      = link_to "total", "?period=total"
+      = link_to "total", "/bikers/#{@biker.id}/total"
   .logged{:style => "text-align: center"}
     #biker_name= @biker.first_name
     .miles= @biker.miles(@period)
@@ -48,10 +48,10 @@
         %tr
           %td= month_name(month)
           %td{:style => "text-align: right;"}= @biker.miles(month)
-          %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= link_to "view log", "?period=#{month}"
+          %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= link_to "view log", "/bikers/#{@biker.id}/#{month_name(month, 'short').downcase}"
         - end
 
-    #add_ride=remote_link "add ride", url(:new_biker_ride, :biker_id => @biker.id), "#ride" if @period == this_month
+    #add_ride=remote_link "add ride", url(:new_biker_ride, :biker_id => @biker.id), "#ride" # if @period == this_month
 
   #overview
     %h2 overview

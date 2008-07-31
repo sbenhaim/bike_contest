@@ -1,7 +1,11 @@
+var el_in_question;
+
 $(document).ready(function() {
 	$("a.remote").click(function() {
-		$(this.rel).load( $(this).attr('part') );
-		$(this.rel).slideDown("slow");
+		el_in_question = $(this.rel);
+		el_in_question.load( $(this).attr('part'), null, function() {
+			el_in_question.slideDown("slow");
+		} );
 	});	
 });
 

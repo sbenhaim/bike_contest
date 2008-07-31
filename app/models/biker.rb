@@ -7,8 +7,8 @@ class Biker < DataMapper::Base
   property :password, :string, :nullable => false
   property :miles_public, :boolean
   
-  def miles( period )
-    if (period == 'total')
+  def miles( period )    
+    if period == 'total'
       self.rides.map {|r| r.distance }.inject { |sum, dist| sum + dist } || 0.0
     else
       self.rides.map {|r| r.distance if r.date.match(/^\d{4}-(\d{2})/)[1] == period }.compact.inject { |sum, dist| sum + dist } || 0.0

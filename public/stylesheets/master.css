@@ -20,16 +20,16 @@ html {
   margin-bottom: 1px;
 }
 body {
-	background-color: #3A478A;
+	background-color: #222222;
 	font-family: "Helvetica", sans-serif;
 	font-size: 12px;
-	color: #666;
+	color: #444;
 }
 #main {
-	background-color: #fefefe;
+	background-color: #FEFBC9;
 	border: 1px solid black;
 	padding: 10px;
-	margin-top: 30px;
+	margin-top: 100px;
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
@@ -181,12 +181,12 @@ td {
 	font-size: 12px;
 /*	font-weight: bold;*/
 	top: 17px;
-	z-index: -1;
+	z-index: -99;
 }
 
 .tab.selected {
-	border-bottom: 1px solid white;
-	background-color: white;
+	border-bottom: 1px solid #FEFBC9;
+	background-color: #FEFBC9;
 	z-index: 99;
 }
 
@@ -214,10 +214,14 @@ td {
 	position: absolute;
 	font-size: 1em;
 	overflow: hidden;
-	color: #000000;
+	color: #000;
 	font-family: Courier;
 	padding: 2px;
 	z-index: 0;
 	border: 1px solid black;
-	background-color: #EEEEEE;
+	background-color: white;
+}
+
+#ride {
+	background-color: white;
 }

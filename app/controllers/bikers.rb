@@ -9,12 +9,10 @@ class Bikers < Application
   end
   
   def authenticate
-    get_biker
     redirect "/" if !@biker || @biker.id != session[:uid]  
   end
   
   def adminstrator
-    get_biker
     redirect "/" if !@biker || @biker.username != 'sbenhaim'
   end
 
@@ -25,7 +23,7 @@ class Bikers < Application
 
   def show
     @bikers = Biker.all
-    @period = params[:period] || this_month
+    @period = period_to_i( params[:period] )
     raise NotFound unless @biker
     render
   end
