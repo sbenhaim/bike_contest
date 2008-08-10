@@ -3,8 +3,6 @@
 :development: &defaults
   :adapter: sqlite3
   :database: db/bike_contest.db
-  :username: merb
-  :password: merb_bc
 
 :test:
   <<: *defaults

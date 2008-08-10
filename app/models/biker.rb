@@ -1,11 +1,14 @@
-class Biker < DataMapper::Base
-  has_many :rides
+class Biker
+  include DataMapper::Resource
   
-  property :first_name, :string, :nullable => false
-  property :last_name, :string, :nullable => false
-  property :username, :string, :nullable => false
-  property :password, :string, :nullable => false
-  property :miles_public, :boolean
+  has n, :rides
+  
+  property :id, Integer,    :serial => true
+  property :first_name, String, :nullable => false
+  property :last_name, String, :nullable => false
+  property :username, String, :nullable => false
+  property :password, String, :nullable => false
+  property :miles_public, Boolean
   
   def miles( period )    
     if period == 'total'

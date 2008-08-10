@@ -1,15 +1,13 @@
 %h1 New Biker
 - form_for :biker, :action => url(:biker) do
-
-%p
-  = text_control :first_name, :label => "First Name"
-%p
-  = text_control :last_name, :label => "Last Name"
-%p
-  = text_control :username, :label => "username"
-%p
-  = password_control :password, :label => "password"
-%p  
-  = submit_button "Create"
-
-- end
+  
+  %p
+    = text_control :first_name, :label => "First Name"
+  %p
+    = text_control :last_name, :label => "Last Name"
+  %p
+    = text_control :username, :label => "username"
+  %p
+    = password_control :password, :label => "password"
+  %p  
+    = submit_button "Create"

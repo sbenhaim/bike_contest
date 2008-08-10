@@ -1,13 +1,11 @@
-%h1 Bikers
+%h1  Bikers
 %ul
   - for biker in @bikers
-  %li
-    %a{:href => url(:biker, biker)}=biker.first_name + " " + biker.last_name
-    \-
-    = biker.rides.map { |r| r.distance }.inject { |sum, x| sum + x }.to_s.ljust(1, "0") + " miles logged"
-    \|
-    = link_to "delete", url(:delete_biker, biker)
-  - end
-  
+    %li
+      %a{:href => url(:biker, biker)}=biker.first_name + " " + biker.last_name
+      \-
+      = biker.rides.map { |r| r.distance }.inject { |sum, x| sum + x }.to_s.ljust(1, "0") + " miles logged"
+      \|
+      = link_to "delete", url(:delete_biker, biker)
 %p
   = link_to "New", url(:new_biker)

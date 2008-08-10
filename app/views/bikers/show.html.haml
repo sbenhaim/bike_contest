@@ -2,9 +2,8 @@
   #switch
     #edit.tab= remote_link "edit account", url(:edit_biker, @biker), "#ride"
     - months.each_with_index do |month, i|
-    %div{:class => @period == month ? 'tab selected' : 'tab', :style => "margin-right: #{(i + 1) * 40 + 15}px; width: 20px;"}
-      = link_to month_name(month, 'short').downcase, "/bikers/#{@biker.id}/#{month_name(month, 'short').downcase}"
-    - end
+      %div{:class => @period == month ? 'tab selected' : 'tab', :style => "margin-right: #{(i + 1) * 40 + 15}px; width: 20px;"}
+        = link_to month_name(month, 'short').downcase, "/bikers/#{@biker.id}/#{month_name(month, 'short').downcase}"
     #total{:class => @period == 'total' ? 'tab selected' : 'tab' }
       = link_to "total", "/bikers/#{@biker.id}/total"
   .logged{:style => "text-align: center"}
@@ -26,17 +25,14 @@
           %th date
           %th miles
         - sort_date(@biker.rides).each do |ride|
-        - next unless month_of(ride) == @period
-        %tr
-          %td= pretty_date ride.date
-          %td{:style => "text-align: right;"}= ride.distance
-          - if true || @period == this_month
-          %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= remote_link( "edit", url(:edit_biker_ride, ride), "#ride" )
-          -end
-          - if true || @period == this_month
-          %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= link_to( "x", url(:delete_biker_ride, ride) )
-          - end
-          - end
+          - next unless month_of(ride) == @period
+          %tr
+            %td= pretty_date ride.date
+            %td{:style => "text-align: right;"}= ride.distance
+            - if true || @period == this_month
+              %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= remote_link( "edit", url(:edit_biker_ride, ride), "#ride" )
+            - if true || @period == this_month
+              %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= link_to( "x", url(:delete_biker_ride, ride) )
       
     #total_log{:class => @period == 'total' ? '' : 'hidden'}
       %table
@@ -45,11 +41,10 @@
           %th miles
           %th
         - months.each do |month|
-        %tr
-          %td= month_name(month)
-          %td{:style => "text-align: right;"}= @biker.miles(month)
-          %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= link_to "view log", "/bikers/#{@biker.id}/#{month_name(month, 'short').downcase}"
-        - end
+          %tr
+            %td= month_name(month)
+            %td{:style => "text-align: right;"}= @biker.miles(month)
+            %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= link_to "view log", "/bikers/#{@biker.id}/#{month_name(month, 'short').downcase}"
 
     #add_ride=remote_link "add ride", url(:new_biker_ride, :biker_id => @biker.id), "#ride" # if @period == this_month
 
@@ -62,11 +57,10 @@
         %th miles
   
       - sort_miles(@bikers, @period).each_with_index do |biker, i|
-      %tr
-        %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= biker.place(@period)
-        %td= biker.first_name + " " + biker.last_name
-        %td{:style => 'text-align: right'}= biker.miles(@period)
-      - end
+        %tr
+          %td{:style => "background-color: #DCDFFF; text-align: center; font-weight: bold"}= biker.place(@period)
+          %td= biker.first_name + " " + biker.last_name
+          %td{:style => 'text-align: right'}= biker.miles(@period)
   #ride
 
   %script
@@ -74,3 +68,4 @@
     $("#log").height(height); $("#overview").height(height);
     var height = $("#logged").height() > $("#chart").height() ? $("#logged").height() : $("#chart").height();
     $("#logged").height(height); $("#chart").height(height);
+    

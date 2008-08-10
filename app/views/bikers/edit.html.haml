@@ -1,25 +1,23 @@
 %h1 Edit
 - form_for :biker, :id => 'edit_biker', :action => url(:biker, @biker) do
-
-%p
-  = text_control :first_name, :label => "First Name", :class => 'required', :disabled => true
-  %span.invalid.fail
-%p
-  = text_control :last_name, :label => "Last Name", :class => 'required', :disabled => true
-  %span.invalid.fail
-%p
-  = text_control :username, :label => "username", :class => 'unique', :rel => 'bikers.username'
-  %span.invalid.fail
-%p
-  = password_control :password, :label => "password", :class => 'required'
-  %span.invalid.fail
-%p
-  = password_control :password, :label => "confirm", :class => 'same_as', :rel => 'biker_password'
-  %span.invalid.fail
-%p  
-  = submit_button "update"
-  %a{:onclick => '$("#ride").slideToggle("slow");', :href => "javascript:;"}cancel
-
-- end
+  
+  %p
+    = text_control :first_name, :label => "First Name", :class => 'required', :disabled => true
+    %span.invalid.fail
+  %p
+    = text_control :last_name, :label => "Last Name", :class => 'required', :disabled => true
+    %span.invalid.fail
+  %p
+    = text_control :username, :label => "username", :class => 'unique', :rel => 'bikers.username'
+    %span.invalid.fail
+  %p
+    = password_control :password, :label => "password", :class => 'required'
+    %span.invalid.fail
+  %p
+    = password_control :password, :label => "confirm", :class => 'same_as', :rel => 'biker_password'
+    %span.invalid.fail
+  %p  
+    = submit_button "update"
+    %a{:onclick => '$("#ride").slideToggle("slow");', :href => "javascript:;"}cancel
 
 %script Val.init("edit_biker");
