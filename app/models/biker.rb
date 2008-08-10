@@ -14,7 +14,7 @@ class Biker
     if period == 'total'
       self.rides.map {|r| r.distance }.inject { |sum, dist| sum + dist } || 0.0
     else
-      self.rides.map {|r| r.distance if r.date.match(/^\d{4}-(\d{2})/)[1] == period }.compact.inject { |sum, dist| sum + dist } || 0.0
+      self.rides.map {|r| r.distance if r.month == period }.compact.inject { |sum, dist| sum + dist } || 0.0
     end
   end
   
