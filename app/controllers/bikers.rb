@@ -50,7 +50,7 @@ class Bikers < Application
   end
 
   def update
-    @biker = Biker.find(params[:id])
+    @biker = Biker.get(params[:id])
     raise NotFound unless @biker
     if @biker.update_attributes(params[:biker])
       redirect url(:biker, @biker)
@@ -60,9 +60,9 @@ class Bikers < Application
   end
 
   def delete
-    @biker = Biker.first(params[:id])
+    @biker = Biker.get(params[:id])
     raise NotFound unless @biker
-    if @biker.destroy!
+    if @biker.destroy
       redirect url(:biker)
     else
       raise BadRequest

@@ -9,7 +9,7 @@ class Rides < Application
 
   def edit
     only_provides :html
-    @ride = Ride.first(params[:id])
+    @ride = Ride.get(params[:id])
     raise NotFound unless @ride
     render :layout => false
   end
@@ -26,7 +26,7 @@ class Rides < Application
   end
 
   def update
-    @ride = Ride.first(params[:id])
+    @ride = Ride.get(params[:id])
     params[:ride][:date] = strtodate(params[:ride][:date])
     biker = @ride.biker
     raise NotFound unless @ride
@@ -38,10 +38,10 @@ class Rides < Application
   end
 
   def delete
-    @ride = Ride.first(params[:id])
+    @ride = Ride.get(params[:id])
     biker = @ride.biker
     raise NotFound unless @ride
-    if @ride.destroy!
+    if @ride.destroy
       redirect url(:biker, biker)
     else
       raise BadRequest
