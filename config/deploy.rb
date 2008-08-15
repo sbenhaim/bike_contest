@@ -16,13 +16,7 @@ role :web, "selah@atili.us"
 
 # role :db,  "your db-server here", :primary => true
 
-desc "Restart merb"
-deploy.task :restart do
-  # run "cd #{deploy_to}; merb -K all"
-  # run "merb -c 4 -p 4000 -m #{deploy_to}"
-  stop
-  start
-end
+
 
 desc "Backup sqlite db"
 task :backup_db do
@@ -34,17 +28,29 @@ task :bikers do
   run "sqlite3 #{db} 'select * from bikers'"
 end
 
-desc "Stop the application servers."
-deploy.task :stop do
-  run "cd #{current_path}; merb -K all"
-end
 
-desc "Start the application servers."
-deploy.task :start do
-  run "merb -c 4 -p 4000 -m #{current_path}"
-end
-
-task :after_update_code do
-  run "ln -nfs #{shared_path}/db/bike_contest.db #{current_path}/db/bike_contest.db"
-end
+namespace :deploy do
   
+  desc "Stop the application servers."
+  task :stop do
+    run "cd #{current_path}; merb -K all"
+  end
+
+  desc "Start the application servers."
+  task :start do
+    run "merb -c 4 -p 4000 -m #{current_path}"
+  end
+  
+  desc "Restart merb"
+  task :restart do
+    # run "cd #{deploy_to}; merb -K all"
+    # run "merb -c 4 -p 4000 -m #{deploy_to}"
+    stop
+    start
+  end
+  
+  task :after_update_code do
+    run "mkdir -p #{current_path}/db"
+    run "ln -nfs #{shared_path}/db/bike_contest.db #{current_path}/db/bike_contest.db"
+  end
+end  
