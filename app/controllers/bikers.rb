@@ -1,7 +1,7 @@
 class Bikers < Application
   
   before :get_biker
-  before :authenticate, :only => [:show, :edit]
+  before :authenticate, :only => [:edit]
   before :adminstrator, :only => [:index, :new, :debug]
   
   def get_biker
@@ -9,7 +9,7 @@ class Bikers < Application
   end
   
   def authenticate
-    redirect "/" if !@biker || @biker.id != session[:uid]  
+    redirect "/" if !@biker || @biker.id != session[:uid]
   end
   
   def adminstrator
@@ -23,6 +23,9 @@ class Bikers < Application
 
   def show
     @bikers = Biker.all
+    @biker = Biker.get(params[:id])
+    @user = Biker.get(session[:uid])
+    @editable = @biker == @user
     @period = period_to_i( params[:period] )
     raise NotFound unless @biker
     render
@@ -50,7 +53,7 @@ class Bikers < Application
   end
 
   def update
-    @biker = Biker.find(params[:id])
+    @biker = Biker.get(params[:id])
     raise NotFound unless @biker
     if @biker.update_attributes(params[:biker])
       redirect url(:biker, @biker)
@@ -60,9 +63,9 @@ class Bikers < Application
   end
 
   def delete
-    @biker = Biker.first(params[:id])
+    @biker = Biker.get(params[:id])
     raise NotFound unless @biker
-    if @biker.destroy!
+    if @biker.destroy
       redirect url(:biker)
     else
       raise BadRequest
