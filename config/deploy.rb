@@ -5,7 +5,7 @@ set :repository,  "git@github.com:sbenhaim/bike_contest.git"
 # servers (which is the default), you can specify the actual location
 # via the :deploy_to variable:
 set :deploy_to, "/home/selah/merb/#{application}"
-set :db, "#{current_path}/db/#{application}.db"
+set :db, "#{shared_path}/db/#{application}.db"
 
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
@@ -20,7 +20,7 @@ role :web, "selah@atili.us"
 
 desc "Backup sqlite db"
 task :backup_db do
-  `scp selah@atili.us:#{deploy_to}/db/#{application}.db ~/Desktop/`
+  `scp selah@atili.us:#{shared_path}/db/#{application}.db ~/Desktop/`
 end
 
 desc "Bikers information"
