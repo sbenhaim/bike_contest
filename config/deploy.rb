@@ -49,8 +49,9 @@ namespace :deploy do
     start
   end
   
-  task :after_update_code do
+  task :after_default do
     run "mkdir -p #{current_path}/db"
     run "ln -nfs #{shared_path}/db/bike_contest.db #{current_path}/db/bike_contest.db"
   end
+  
 end  
