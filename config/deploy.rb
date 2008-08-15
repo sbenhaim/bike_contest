@@ -5,7 +5,7 @@ set :repository,  "git@github.com:sbenhaim/bike_contest.git"
 # servers (which is the default), you can specify the actual location
 # via the :deploy_to variable:
 set :deploy_to, "/home/selah/merb/#{application}"
-set :db, "#{deploy_to}/db/#{application}.db"
+set :db, "#{current_path}/db/#{application}.db"
 
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
@@ -36,11 +36,15 @@ end
 
 desc "Stop the application servers."
 deploy.task :stop do
-  run "cd #{deploy_to}; merb -K all"
+  run "cd #{current_path}; merb -K all"
 end
 
 desc "Start the application servers."
 deploy.task :start do
-  run "merb -c 4 -p 4000 -m #{deploy_to}"
+  run "merb -c 4 -p 4000 -m #{current_path}"
+end
+
+task :after_update_code do
+  run "ln -nfs #{shared_path}/db/bike_contest.db #{current_path}/db/bike_contest.db"
 end
   
