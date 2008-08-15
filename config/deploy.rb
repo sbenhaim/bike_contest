@@ -18,8 +18,10 @@ role :web, "selah@atili.us"
 
 desc "Restart merb"
 deploy.task :restart do
-  run "merb -K all"
-  run "merb -c 4 -m #{deploy_to}"
+  # run "cd #{deploy_to}; merb -K all"
+  # run "merb -c 4 -p 4000 -m #{deploy_to}"
+  stop
+  start
 end
 
 desc "Backup sqlite db"
@@ -31,3 +33,14 @@ desc "Bikers information"
 task :bikers do
   run "sqlite3 #{db} 'select * from bikers'"
 end
+
+desc "Stop the application servers."
+deploy.task :stop do
+  run "cd #{deploy_to}; merb -K all"
+end
+
+desc "Start the application servers."
+deploy.task :start do
+  run "merb -c 4 -p 4000 -m #{deploy_to}"
+end
+  
