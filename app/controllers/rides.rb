@@ -9,7 +9,7 @@ class Rides < Application
 
   def edit
     only_provides :html
-    @ride = Ride.first(params[:id])
+    @ride = Ride.get(params[:id])
     raise NotFound unless @ride
     render :layout => false
   end
