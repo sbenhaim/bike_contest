@@ -24,13 +24,18 @@ Array.prototype.remove = function(el) {
 }
 
 function stats( target, info ) {
-	var data = info.data;
 	var ticks = info.names;
 	console.log(info);
 	target = $("#" + target);
 	options = { 
 		bars: { show: true, barWidth: 0.7 },
-		xaxis: { ticks: ticks }
+		xaxis: { ticks: ticks, tickSize: 30 }
 		};
-	$.plot(target, [data], options );
+		
+	stuff = {
+		color: 'blue',
+		data: info.data
+	};
+	
+	$.plot(target, [stuff], options );
 }
