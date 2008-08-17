@@ -55,7 +55,9 @@
       #add_ride=remote_link "add ride", url(:new_biker_ride, :biker_id => @biker.id), "#ride" # if @period == this_month
 
   #overview
-    %h2 overview
+    %h2 
+      overview |
+      %a{ :href => "javascript:", :onclick => "stats('overview', #{stats(@period).to_json})" }charts
     %table
       %tr
         %th place
