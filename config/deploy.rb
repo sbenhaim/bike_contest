@@ -43,15 +43,13 @@ namespace :deploy do
   
   desc "Restart merb"
   task :restart do
-    # run "cd #{deploy_to}; merb -K all"
-    # run "merb -c 4 -p 4000 -m #{deploy_to}"
     stop
     start
   end
   
   task :after_default do
     run "mkdir -p #{current_path}/db"
-    run "ln -nfs #{shared_path}/db/bike_contest.db #{current_path}/db/bike_contest.db"
+    run "ln -nfs #{db} #{current_path}/db/bike_contest.db"
   end
   
-end  
+end
