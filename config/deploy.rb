@@ -12,6 +12,7 @@ set :db, "#{shared_path}/db/#{application}.db"
 set :scm, :git
 
 role :app, "selah@atili.us"
+set :app, "selah@atili.us"
 role :web, "selah@atili.us"
 
 # role :db,  "your db-server here", :primary => true
@@ -20,7 +21,7 @@ role :web, "selah@atili.us"
 
 desc "Backup sqlite db"
 task :backup_db do
-  `scp selah@atili.us:#{shared_path}/db/#{application}.db ~/Desktop/`
+  `scp #{app}:#{shared_path}/db/#{application}.db ~/Desktop/`
 end
 
 desc "Bikers information"
