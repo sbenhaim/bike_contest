@@ -4,7 +4,7 @@ module Merb
         bikers.sort {|a, b| b.miles(period) <=> a.miles(period)}
       end      
       
-      def period_to_i( period )
+      def period_to_i( period = nil )
         return this_month unless period
         return 'total' if period == 'total'
         months = %w{apr may jun jul aug sep oct}
