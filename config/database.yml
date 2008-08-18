@@ -1,11 +1,12 @@
 ---
 # This is a sample database file for the DataMapper ORM
-:development: &defaults
-  :adapter: sqlite3
-  :database: db/bike_contest.db
+development: &defaults
+  adapter: sqlite3
+  database: db/bike_contest.db
 
-:test:
+test:
   <<: *defaults
+  database: db/test_bike_contest.db
 
-:production:
+production:
   <<: *defaults

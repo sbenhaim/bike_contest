@@ -3,10 +3,10 @@ class Biker
   
   has n, :rides
   
-  property :id, Integer,    :serial => true
+  property :id, Integer, :serial => true
   property :first_name, String, :nullable => false
   property :last_name, String, :nullable => false
-  property :username, String, :nullable => false
+  property :username, String, :nullable => false, :unique => true
   property :password, String, :nullable => false
   property :miles_public, Boolean
   
